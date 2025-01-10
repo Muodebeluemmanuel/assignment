@@ -177,11 +177,35 @@ def spanish():
             
      search_btn = Button(window, text="search", command=lambda: search(word.get()))
      search_btn.pack()
+def Hausa():
+     word = StringVar()
+     word_entry = Entry(window, textvariable=word, font=('ariel', 19))
+     word_entry.pack()
+
+
+     result = StringVar()
+     result_label = Label(window, textvariable=result)
+     result_label.pack()
+
+
+     def search (word):
+        if word in Hausa_dictionary:
+            result.set(Hausa_dictionary[word])
+            print(Hausa_dictionary[word])
+        else:
+            result.set("not found")
+            
+     search_btn = Button(window, text="search", command=lambda: search(word.get()))
+     search_btn.pack()
+
 mb.menu.add_command(label="Igbo dictionary",command=(openNewWindow))
 mb.pack()
 
 menu2_btn=Button(window,text="spanish Language",command=(spanish))
 menu2_btn.pack() 
+menu3_btn=Button(window,text="Igala Language",command=(Hausa))
+menu3_btn.pack() 
+
 
 window.mainloop()
 
