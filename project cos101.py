@@ -75,35 +75,27 @@ Hausa_dictionary={"zo" : 'come'
                   "kasa" : 'sand',
                   "allo" : 'board',
                   "shiga" : 'enter'}
-   from tkinter import  TK, Entry, Button,Label,StringVar
-   
-    window=TK()
-    window.geometry("688×255")
-    window.title("Igala_dictionary")
-    
-    word.Stringvar()
-    word_entry.Entry(window,textvariable=word,font.('ariel',19))
-    word_entry.pack()
-    
-    result=StringVar()
-    result_label=Label(window, textvariable=result)
-    result_label.pack()
-    
-    def search (word):
-        if word in Igala_dictionary:
-            result.set(Igala_dictionary[word])
-            print(Igala_dictionary[word])
-        else:
-            result.set("not found")
-            
-    search_btn=Button(window, text="search", command=lambda: search(word.get()))
-    search_btn.pack
-    
-    exit_button=Button(window,text="exit",command=lambda: exit())
-    exit_button.pack()
-    
-    word_entry=Entry(window, textvariable=word, font=('ariel', 19))
-    window.mainloop()
+Yoruba_dictionary={"wa": 'come',
+                   "oba": 'king',
+                   "owo": 'money',
+                   "bawo": 'hello',
+                   "ese":'thank you',
+                   "omi" : 'water',
+                   "ounje":'food',
+                   "ile": 'house',
+                   "oko": 'husband',
+                   "dobale": 'postrate',
+                   "aale": 'night',
+                   "iwaju" 'front',
+                   "iya" 'mother',
+                   "ife": 'love',
+                   "oyin": 'honey',
+                   "ilekun": 'door,'
+                   "aga": 'chair',
+                   "oluko": 'teacher',
+                   "aja": 'dog',
+                   "duro": 'wait',
+ 
     
 from tkinter import Tk, Entry, Button, Label, StringVar,Menubutton,Menu
 
@@ -117,7 +109,24 @@ mb.menu= Menu(mb)
 mb["menu"]=mb.menu
 
 
-
+   def Igala():
+      word.Stringvar()
+      word_entry.Entry(window,textvariable=word,font.('ariel',19))
+      word_entry.pack()
+    
+      result=StringVar()
+      result_label=Label(window, textvariable=result)
+      result_label.pack()
+    
+      def search (word):
+          if word in Igala_dictionary:
+              result.set(Igala_dictionary[word])
+              print(Igala_dictionary[word])
+          else:
+              result.set("not found")
+            
+      search_btn=Button(window, text="search", command=lambda: search(word.get()))
+      search_btn.pack
 def openNewWindow():
     word = StringVar()
     word_entry = Entry(window, textvariable=word, font=('ariel', 19))
@@ -197,14 +206,36 @@ def Hausa():
             
      search_btn = Button(window, text="search", command=lambda: search(word.get()))
      search_btn.pack()
+def Yoruba():
+    word = stringvar()
+    word_entry = Entry(window, textvariable=word,
+    word_entry.pack
 
+    result = stringvar()
+    result_label = label(window, textvariable=result)
+    result_label.pack()
+
+     def search (word):
+     if word in Yoruba dictionary:
+        results.set(Yoruba_dictionary[word])
+        print(Yoruba_dictionary[word])
+     else:
+        result.set("not found")
 mb.menu.add_command(label="Igbo dictionary",command=(openNewWindow))
 mb.pack()
 
 menu2_btn=Button(window,text="spanish Language",command=(spanish))
 menu2_btn.pack() 
-menu3_btn=Button(window,text="Igala Language",command=(Hausa))
+
+menu3_btn=Button(window,text="hausa Language",command=(Hausa))
 menu3_btn.pack() 
+
+menu4_btn=Button(window,text="yoruba Language",command=(yoruba))
+menu4_btn.pack() 
+
+menu5_btn=Button(window,text="Igala Language",command=(Igala))
+menu5_btn.pack() 
+
 
 
 window.mainloop()
