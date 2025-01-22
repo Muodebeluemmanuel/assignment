@@ -76,7 +76,26 @@ Yoruba_dictionary={"wa": 'come',
                    "oluko": 'teacher',
                    "aja": 'dog',
                    "duro": 'wait',
- 
+ Hausa_dictionary={"zo" : 'come',
+                  "tafi": 'go',
+                  "abinchi" : 'food',
+                  "shiga" : 'enter',
+                  "gudu" : 'run',
+                  "waya" : 'phone',
+                  "ni" : 'me',
+                  "su" : 'them',
+                  "shi" : 'him',
+                  "ita" : 'her',
+                  "lemu" : 'orange',
+                  "daba" : 'animal',
+                  "kujera" : 'chair',
+                  "takalmi" : 'chair',
+                  "waje" : 'outside',
+                  "kalmomi" :'alphabets',
+                  "fanca" :'fan',
+                  "kasa" : 'sand',
+                  "allo" : 'board',
+                  "shiga" : 'enter'}
     
 from tkinter import Tk, Entry, Button, Label, StringVar,Menubutton,Menu
 
@@ -146,7 +165,26 @@ word.Stringvar()
             
     search_btn=Button(window, text="search", command=lambda: search(word.get()))
     search_btn.pack
+def Hausa():
+     word = StringVar()
+     word_entry = Entry(window, textvariable=word, font=('ariel', 19))
+     word_entry.pack()
 
+
+     result = StringVar()
+     result_label = Label(window, textvariable=result)
+     result_label.pack()
+
+
+     def search (word):
+        if word in Hausa_dictionary:
+            result.set(Hausa_dictionary[word])
+            print(Hausa_dictionary[word])
+        else:
+            result.set("not found")
+            
+     search_btn = Button(window, text="search", command=lambda: search(word.get()))
+     search_btn.pack()
 def spanish():
      word = StringVar()
      word_entry = Entry(window, textvariable=word, font=('ariel', 19))
